@@ -41,14 +41,15 @@ cardapio.addEventListener("click", function(event){
         addCarrinho(nome, preco);
 
     }
+    updateCarrinhoModal();
 });
 
 //função para adcionar no carrinho 
-function addCarrinho(nome, preco, quandidade){
+function addCarrinho(nome, preco, quantidade){
     const itemDuplicado = carrinho.find(item => item.nome == nome)
 
     if(itemDuplicado){
-        //se o item já existir na lista ele vai apenas mudar a quandidade do item ao invés de adicionar um novo item
+        //se o item já existir na lista ele vai apenas mudar a quantidade do item ao invés de adicionar um novo item
         itemDuplicado.quantidade += 1;
         return;
     }
@@ -76,15 +77,13 @@ function updateCarrinhoModal(){
                     <p class="font-medium mt-2"> R$ ${item.preco.toFixed(2)}</p>
                 </div>
 
-                <div>
-                    <button class="text-red-600">
+                    <button class="text-red-600 remover-btn" data-nome="${item.nome}">
                         remover
                     </button>
-                </div>
             </div>
         `;
         
-        total += item.preco * item.quandidade
+        total += item.preco * item.quantidade
         carrinhoItemsContainer.appendChild(itemElemento);
     });
 
@@ -97,4 +96,32 @@ function updateCarrinhoModal(){
 
 } 
 
-//função para remover um item do carrinho 
+// Função para remover um item do carrinho
+carrinhoItemsContainer.addEventListener("click", function(event) {
+    // Verifica se o botão clicado tem a classe "remover-btn"
+    if (event.target.classList.contains("remover-btn")) {
+        const nome = event.target.getAttribute("data-nome");
+        removeItemCarrinho(nome); // Chama a função para remover o item
+    }
+});
+
+function removeItemCarrinho(nome) {
+    // Encontra o índice do item no carrinho
+    const index = carrinho.findIndex(item => item.nome === nome);
+
+    
+    if (index !== -1) {
+        const item = carrinho[index];
+
+        // Se a quantidade for maior que 1, reduz a quantidade
+        if (item.quantidade > 1) {
+            item.quantidade -= 1;
+            updateCarrinhoModal();
+            return;
+        } 
+
+        carrinho.splice(index, 1);
+        updateCarrinhoModal();
+        
+    }
+}
