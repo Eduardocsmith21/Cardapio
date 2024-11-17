@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style/output.css">
+
+    <title>Cardapio</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <img 
+                src="./assets/hamb-1.png"
+                alt="Logo dev buger" 
+                class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
+            />
+            <h1 class="text-4xl mt-4 font-bold text-white">Dev Buger</h1>
+            <span class="text-white font-medium mt-1"> Avenida Getúlio Vargas, Bairro Goiabeiras, Cuiabá - MT </span>
+
+            <div class="bg-green-600 px-4 py-1 rounded-lg mt-5 font-medium text-white" id="date-spam">
+                <span> Seg á Dom - 18:00 as 22:00</span>
+            </div>
+        </div>
+    </header>
+    <!--FIM HEDER-->
+
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">Conheça nosso cardápio</h2>
+
+    <!--INICIO CARDÁPIO-->
+    <div id="cardapio">
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img 
+                src="assets/hamb-1.png" 
+                alt="Hamburger Smash"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">Hambuger Smash</p>
+                    <p class="text-sm">Carne 100% bovina prensada na chapa, queijo derretido, pickles crocantes e molho especial no pão macio e tostado!</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg"> R$ 18.90 </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Hambuger Smash"
+                            data-price="18.90"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+            
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img 
+                src="assets/hamb-2.png" 
+                alt="Hamburger Duplo"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">Hambuger Duplo</p>
+                    <p class="text-sm">Duas suculentas camadas de carne 100% bovina prensadas na chapa, com queijo derretido em cada camada, pickles crocantes e nosso molho especial!</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg"> R$ 32.90 </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Hambuger Duplo"
+                            data-price="32.90"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img 
+                src="assets/hamb-8.png" 
+                alt="X - Salada"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold"> X - Salada</p>
+                    <p class="text-sm"> Um clássico feito com pão, hambúrguer, queijo, alface, tomate e maionese!</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg"> R$ 35.90 </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="X - Salada"
+                            data-price="35.90"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img 
+                src="assets/hamb-7.png" 
+                alt="Smash Cebola"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold"> Smash Cebola</p>
+                    <p class="text-sm"> Com carne 100% bovina, coberto por cebolas caramelizadas doces e queijo derretido. Finalizado com maionese cremosa e mostarda!</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg"> R$ 28.90 </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Smash Cebola"
+                            data-price="28.90"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <div class="mx-auto max-w-7xl px-2 my-2">
+            <h2 class="font-bold text-3xl"> Bebidas </h2>
+        </div>
+
+        <!--GRID BEBIDAS-->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16 id" id="cardapio">
+
+            
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2 w-full">
+                <img 
+                src="assets/refri-1.png" 
+                alt="Coca Lata"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div class="w-full">
+                    <p class="font-bold">Coca Lata</p>
+                    <p class="text-sm">Coca Lata 350 ml</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg"> R$ 7.00 </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Coca Lata"
+                            data-price="7.00"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+
+             
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2 w-full">
+                <img 
+                src="assets/refri-2.png" 
+                alt="Coca Lata"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div class="w-full">
+                    <p class="font-bold">Guaraná Lata</p>
+                    <p class="text-sm">Guaraná Lata 350 ml</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg"> R$ 7.00 </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                            data-name="Guarana Lata"
+                            data-price="7.00"
+                            >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+
+        </div>
+        <!--FIM GRID BEBIDAS-->
+    </div>
+    <!--FIM CARDÁPIO-->
+
+    <!--MODAL CARRINHO-->
+    <div class="bg-black/70 w-full h-full top-0 left-0 z-[99] flex items-center justify-center hidden">
+        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+            <h2 class="text-center font-bold text-2xl md-2">Meu Carrinho</h2>
+
+            <div id="carrinho-itens" class="flex justify-between md-2 flex-col"></div>
+
+            <p class="font-bold">Total: <span id="carrinho-total">0.00</span></p>
+
+            <p class="font-bold mt-4">Endereço de Entrega:</p>
+            <input 
+            type="text"
+            placeholder="Digite seu endereço completo"
+            id="endereco"
+            class="w-full border-2 p-1 rounded my-1"
+            />
+            <p class="text-red-600 hidden" id="endereco-erro">Digite seu endereço completo</p>
+
+            <div class="flex items-center justify-between mt-5 w-full">
+                <button id="fechar-modal-btn">Fechar</button>
+                <button id="check-btn" class="bg-green-600 text-white px-4 py-1 rounded">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+    <!--FIM MODAL CARRINHO-->
+
+    <!--BOTÃO CARRINHO FOOTER-->
+    <footer class="w-full bg-red-600 py-2 fixed bottom-0 z-40  flex items-center justify-center">
+        <button class="felx items-center gap-2 text-white font-bold" id="carrinho-btn">
+            <span id="carrinho">0</span>
+            Veja o carrinho
+            <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+    </footer>
+     <!--FIM BOTÃO CARRINHO FOOTER-->
+</body>
+</html>
