@@ -125,3 +125,74 @@ function removeItemCarrinho(nome) {
         
     }
 }
+
+endereco.addEventListener("input", function(event){
+    let valorInput = event.target.value;
+
+    if(valorInput !== ""){
+        endereco.classList.remove("bord-red-600");
+        enderecoErro.classList.add("hidden");
+    }
+    //
+});
+
+
+checkBtn.addEventListener("click", function(){
+
+    const aberto = ckeckOpen();
+    if(!aberto){
+        Toastify({
+            text: "Ops o restaurante está fechado",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#ef4444",
+            }
+        }).showToast();
+
+        return;
+    }
+
+    if(carrinho.length === 0) return
+
+    if(endereco.value === ""){
+        enderecoErro. classList.remove("hidden");
+        endereco.classList.add("border-red-600");
+    }
+
+    //enviar pedido 
+    const cartItems = carrinho.map((item) =>{
+        return (
+            `${item.nome} Quantidade: (${item.quantidade}) Preço: R$(${item.preco}) | `
+        )
+    }).join("");
+    
+    const mensagem = encodeURIComponent(cartItems);
+    const telefone = "992664967" //Colocar o número para redirecionar a mensagem
+    window.open(`https://wa.me/${telefone}?text=${mensagem} Endereço: ${endereco.value}`, "_blank");
+
+    carrinho = [];
+    updateCarrinhoModal();
+})
+
+//verificar hora e manipular card do horario
+function ckeckOpen(){
+    const data = new Date();
+    const horas = data.getHours();
+    return horas >= 19 && horas < 22; //true, restaurante aberto
+}
+
+const spanItem = document.getElementById("date-spam");
+const aberto = ckeckOpen();
+
+if(aberto){
+    spanItem.classList.remove("bg-red-600");
+    spanItem.classList.add("bg-green-600");
+}
+else{
+    spanItem.classList.remove("bg-green-600");
+    spanItem.classList.add("bg-red-600");
+}
