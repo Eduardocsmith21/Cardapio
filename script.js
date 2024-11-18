@@ -182,7 +182,7 @@ checkBtn.addEventListener("click", function(){
 function ckeckOpen(){
     const data = new Date();
     const horas = data.getHours();
-    return horas >= 19 && horas < 22; //true, restaurante aberto
+    return horas >= 18 && horas < 22; //true, restaurante aberto
 }
 
 const spanItem = document.getElementById("date-spam");
