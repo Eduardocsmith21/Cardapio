@@ -170,13 +170,31 @@ checkBtn.addEventListener("click", function(){
         )
     }).join("");
     
-    const mensagem = encodeURIComponent(cartItems);
+    /*const mensagem = encodeURIComponent(cartItems);
     const telefone = "992664967" //Colocar o número para redirecionar a mensagem
     window.open(`https://wa.me/${telefone}?text=${mensagem} Endereço: ${endereco.value}`, "_blank");
 
     carrinho = [];
     updateCarrinhoModal();
-})
+})*/
+
+    
+    
+    // Obtendo os dados
+const mensagem = encodeURIComponent(cartItems);
+const telefone = "992664967"; // Número do telefone do WhatsApp
+const enderecoValue = encodeURIComponent(endereco.value);
+
+// Definindo a URL para abrir no WhatsApp
+const url = `https://wa.me/${telefone}?text=${mensagem}%20Endereço:%20${enderecoValue}`;
+
+// Definindo a URL no WebViewer
+WebViewer1.Url = url;
+
+
+
+
+    
 
 //verificar hora e manipular card do horario
 function ckeckOpen(){
